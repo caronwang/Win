@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c87c3262-2ca7-4282-9dc9-4af6c715cf59" name="Default Changelist" comment="" />
+    <list default="true" id="c87c3262-2ca7-4282-9dc9-4af6c715cf59" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/v1.0/iface/iconnMgr.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v1.0/wnet/connMgr.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1.0/iface/irouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/iface/irouter.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +21,13 @@
     </option>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.14.6/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1hOQTn08MnLR8ySBFEwDMJIjT32" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -122,10 +134,14 @@
       <screen x="0" y="23" width="1680" height="959" />
     </state>
     <state x="749" y="378" key="EnvironmentVariablesDialog/0.23.1680.959@0.23.1680.959" timestamp="1599881328740" />
-    <state x="773" y="404" width="687" height="300" key="Github.ShareDialog" timestamp="1599930516678">
+    <state x="517" y="371" width="687" height="300" key="Github.ShareDialog" timestamp="1599930630621">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
-    <state x="773" y="404" width="687" height="300" key="Github.ShareDialog/0.23.1680.959@0.23.1680.959" timestamp="1599930516678" />
+    <state x="517" y="371" width="687" height="300" key="Github.ShareDialog/0.23.1680.959@0.23.1680.959" timestamp="1599930630621" />
+    <state x="701" y="212" key="Github.UntrackedFilesDialog" timestamp="1599930641905">
+      <screen x="0" y="23" width="1680" height="959" />
+    </state>
+    <state x="701" y="212" key="Github.UntrackedFilesDialog/0.23.1680.959@0.23.1680.959" timestamp="1599930641905" />
     <state width="1523" height="252" key="GridCell.Tab.0.bottom" timestamp="1599930559743">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
