@@ -1,0 +1,10 @@
+{
+  "Host": "0.0.0.0",
+  "TcpPort":  8888,
+  "Name": "test",
+  "Version": "0.3" ,
+  "MaxConn":       1000,
+  "MaxPackageSize": 4000,
+  "WorkerPoolSize": 2,
+  "MaxWorkerTaskSize": 20
+}
