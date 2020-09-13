@@ -1,10 +1,9 @@
 {
   "Host": "0.0.0.0",
   "TcpPort":  8888,
-  "Name": "test",
-  "Version": "0.3" ,
+  "Name": "Game",
   "MaxConn":       1,
   "MaxPackageSize": 4000,
-  "WorkerPoolSize": 2,
-  "MaxWorkerTaskSize": 20
+  "WorkerPoolSize": 10,
+  "MaxWorkerTaskSize": 2000
 }

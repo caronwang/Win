@@ -10,6 +10,19 @@ type IServer interface {
 	//运行服务器
 	Serve()
 	//路由功能
-	AddRouter(msgId uint32,router IRouter)
+	AddRouter(msgId uint32, router IRouter)
 
+	GetConnMgr() IConnManager
+
+	//注册OnConnStart钩子方法
+	SetOnConnStart(func(connection IConnection))
+
+	//注册OnConnStop钩子方法
+	SetOnConnStop(func(connection IConnection))
+
+	//调用OnConnStart钩子方法
+	CallOnConnStart(conn IConnection)
+
+	//调用OnConnStart钩子方法
+	CallOnConnStop(conn IConnection)
 }
