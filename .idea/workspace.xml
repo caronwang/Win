@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c87c3262-2ca7-4282-9dc9-4af6c715cf59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/apis/move.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/client/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/conf/conf.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/core/aio_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/core/aoi.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/core/gird.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/core/player.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/core/worldMgr.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/gen.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/proto/msg.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmo/proto/msg.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/conf/conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/conf/conf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/demo/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/demo/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/demo/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/demo/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/iface/iServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/iface/iServer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/iface/iconnection.go" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/iface/iconnection.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/wnet/connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/wnet/connection.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/wnet/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/wnet/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +122,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="新增说明" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增说明" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -170,22 +150,22 @@
       <screen x="0" y="23" width="1680" height="959" />
     </state>
     <state x="701" y="212" key="Github.UntrackedFilesDialog/0.23.1680.959@0.23.1680.959" timestamp="1599930641905" />
-    <state width="1523" height="252" key="GridCell.Tab.0.bottom" timestamp="1599969452775">
+    <state width="1523" height="252" key="GridCell.Tab.0.bottom" timestamp="1599982592550">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
-    <state width="1523" height="252" key="GridCell.Tab.0.bottom/0.23.1680.959@0.23.1680.959" timestamp="1599969452775" />
-    <state width="1523" height="252" key="GridCell.Tab.0.center" timestamp="1599969452773">
+    <state width="1523" height="252" key="GridCell.Tab.0.bottom/0.23.1680.959@0.23.1680.959" timestamp="1599982592550" />
+    <state width="1523" height="252" key="GridCell.Tab.0.center" timestamp="1599982592550">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
-    <state width="1523" height="252" key="GridCell.Tab.0.center/0.23.1680.959@0.23.1680.959" timestamp="1599969452773" />
-    <state width="1523" height="252" key="GridCell.Tab.0.left" timestamp="1599969452772">
+    <state width="1523" height="252" key="GridCell.Tab.0.center/0.23.1680.959@0.23.1680.959" timestamp="1599982592550" />
+    <state width="1523" height="252" key="GridCell.Tab.0.left" timestamp="1599982592549">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
-    <state width="1523" height="252" key="GridCell.Tab.0.left/0.23.1680.959@0.23.1680.959" timestamp="1599969452772" />
-    <state width="1523" height="252" key="GridCell.Tab.0.right" timestamp="1599969452773">
+    <state width="1523" height="252" key="GridCell.Tab.0.left/0.23.1680.959@0.23.1680.959" timestamp="1599982592549" />
+    <state width="1523" height="252" key="GridCell.Tab.0.right" timestamp="1599982592550">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
-    <state width="1523" height="252" key="GridCell.Tab.0.right/0.23.1680.959@0.23.1680.959" timestamp="1599969452773" />
+    <state width="1523" height="252" key="GridCell.Tab.0.right/0.23.1680.959@0.23.1680.959" timestamp="1599982592550" />
     <state width="1523" height="312" key="GridCell.Tab.1.bottom" timestamp="1599968451854">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
@@ -202,10 +182,10 @@
       <screen x="0" y="23" width="1680" height="959" />
     </state>
     <state width="1523" height="312" key="GridCell.Tab.1.right/0.23.1680.959@0.23.1680.959" timestamp="1599968451854" />
-    <state x="497" y="240" key="Vcs.Push.Dialog.v2" timestamp="1599932132430">
+    <state x="497" y="240" key="Vcs.Push.Dialog.v2" timestamp="1599970308700">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
-    <state x="497" y="240" key="Vcs.Push.Dialog.v2/0.23.1680.959@0.23.1680.959" timestamp="1599932132430" />
+    <state x="497" y="240" key="Vcs.Push.Dialog.v2/0.23.1680.959@0.23.1680.959" timestamp="1599970308700" />
     <state x="598" y="133" width="919" height="735" key="find.popup" timestamp="1599929565109">
       <screen x="0" y="23" width="1680" height="959" />
     </state>

@@ -1,8 +1,6 @@
 # 介绍
 该项目是一个轻量级GO的TCP服务框架
 
-
-
 ## 消息封装
 
 定义一个解决TCP粘包问题的封包拆包模块
@@ -10,9 +8,7 @@
 - 针对Message进行TLV格式的拆包
 
 
-
 ## 多路由模式
-
 
 
 ## 读写协程分离
@@ -54,5 +50,9 @@
 | 200   | BroadCast<br />广播消息<br />发起者:server             | Pid:玩家<br />Topic:消息类型（1:世界聊天，2:坐标，3:动作）<br />Content:消息 |
 | 201   | SynPid<br />广播消息 掉线/消失视野<br />发起者：Server | Pid：玩家ID                                                  |
 | 202   | SynPos<br />将玩家信息同步给周围人                     | Player: 玩家信息（Pid：玩家ID，Position：位置信息）          |
-|       |                                                        |                                                              |
+|       |                      
+                                  
+                                  
 
+
+ksyd95339
