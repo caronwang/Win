@@ -8,7 +8,9 @@ import (
 )
 
 type ConnManager struct {
+	//记录connId和连接对象的映射关系
 	cons map[uint32]iface.IConnection
+
 	lock sync.RWMutex
 }
 
