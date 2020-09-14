@@ -8,13 +8,13 @@
 服务框架
 
 ```
-└── v1.0										//服务框架目录
-    ├── conf								//配置文件
+└── v1.0	//服务框架目录
+    ├── conf	//配置文件
     │   └── conf.json
-    ├── demo								//测试程序
-    │   ├── client.go					//客户端测试程序
-    │   └── server.go					//服务端程序
-    ├── iface									//抽象层
+    ├── demo	//测试程序
+    │   ├── client.go	//客户端测试程序
+    │   └── server.go	//服务端程序
+    ├── iface	//抽象层
     │   ├── IRequest.go				
     │   ├── iDataPack.go
     │   ├── iMsgHandler.go
@@ -25,42 +25,40 @@
     │   └── irouter.go
     ├── readme.md
     ├── utils
-    │   └── global.go					//全局配置管理
-    └── wnet									//实现层
-        ├── connMgr.go				//连接管理
-        ├── connection.go			//客户端连接对象
-        ├── datapack.go				//消息解析器
+    │   └── global.go	//全局配置管理
+    └── wnet	//实现层
+        ├── connMgr.go	//连接管理
+        ├── connection.go	//客户端连接对象
+        ├── datapack.go	//消息解析器
         ├── datapack_test.go	//消息解析器-单元测试
-        ├── message.go				//消息对象
-        ├── msgHandler.go			//消息处理器
-        ├── request.go				//客户端请求对象
-        ├── router.go					//路由对象
-        └── server.go					//服务对象
+        ├── message.go	//消息对象
+        ├── msgHandler.go	//消息处理器
+        ├── request.go	//客户端请求对象
+        ├── router.go	//路由对象
+        └── server.go	//服务对象
 ```
 
 MMO应用
 
 ```shell
 ├── mmo
-│   ├── apis									//api功能实现
+│   ├── apis	//api功能实现
 │   │   └── move.go
 │   ├── client
-│   │   └── main.go						//客户端测试程序
+│   │   └── main.go	//客户端测试程序
 │   ├── conf
-│   │   └── conf.json					//配置文件
+│   │   └── conf.json	//配置文件
 │   ├── core
-│   │   ├── aio_test.go				//AIO管理-单元测试
-│   │   ├── aoi.go						//AIO管理
-│   │   ├── gird.go						//网格对象
-│   │   ├── player.go					//玩家对象
-│   │   └── worldMgr.go				//世界管理器
+│   │   ├── aio_test.go	//AIO管理-单元测试
+│   │   ├── aoi.go	//AIO管理
+│   │   ├── gird.go	//网格对象
+│   │   ├── player.go	//玩家对象
+│   │   └── worldMgr.go	//世界管理器
 │   ├── gen.sh
-│   ├── main.go								//MMO服务程序
+│   ├── main.go	//MMO服务程序
 │   └── proto
-│       ├── msg.pb.go
+│       ├── msg.pb.go	//msg对象
 │       └── msg.proto
-
-
 ```
 
 
