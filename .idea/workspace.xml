@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c87c3262-2ca7-4282-9dc9-4af6c715cf59" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/wnet/connMgr.go" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/wnet/connMgr.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,11 +137,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="update" />
     <MESSAGE value="新增说明" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增说明" />
+    <MESSAGE value="新增代码说明" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增代码说明" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -183,10 +212,10 @@
       <screen x="0" y="23" width="1680" height="959" />
     </state>
     <state width="1523" height="312" key="GridCell.Tab.1.right/0.23.1680.959@0.23.1680.959" timestamp="1600038261415" />
-    <state x="497" y="240" key="Vcs.Push.Dialog.v2" timestamp="1600038225573">
+    <state x="497" y="240" key="Vcs.Push.Dialog.v2" timestamp="1600103963389">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
-    <state x="497" y="240" key="Vcs.Push.Dialog.v2/0.23.1680.959@0.23.1680.959" timestamp="1600038225573" />
+    <state x="497" y="240" key="Vcs.Push.Dialog.v2/0.23.1680.959@0.23.1680.959" timestamp="1600103963389" />
     <state x="598" y="133" width="919" height="735" key="find.popup" timestamp="1599929565109">
       <screen x="0" y="23" width="1680" height="959" />
     </state>

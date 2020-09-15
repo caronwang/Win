@@ -120,6 +120,9 @@ type IServer interface {
 ## 消息封装
 
 定义一个解决TCP粘包问题的封包拆包模块
+
+改造思路：
+
 - 针对Message进行TLV格式的封装
 - 针对Message进行TLV格式的拆包
 
@@ -149,6 +152,28 @@ type IDatePack interface {
 	Unpack([]byte) (IMessage,error)
 }
 
+wnet/request.go
+//客户端请求的连接信息，和请求数据包装到一个request对象中
+type Request struct {
+	//已经和客户端建立好的连接
+	conn iface.IConnection
+	//客户端请求的数据
+	//data []byte
+	msg iface.IMessage
+
+}
+
+iface/IRequest.go
+
+//请求接口
+type IRequest interface {
+  //得到request对象绑定的connection对象
+	GetConnection() IConnection
+  //设置request的数据
+	GetData() []byte
+  //设置request的消息类型
+	GetMsgID() uint32
+}
 ```
 
 
@@ -209,11 +234,9 @@ func (*MoveApi) Handle(request IRequest) {
 
 
 
-
-
-
-
 ## 读写协程分离
+
+改造思路：
 
 - 添加一个reader和writer通信的channel
 - 添加一个writer goroutine
@@ -224,25 +247,161 @@ func (*MoveApi) Handle(request IRequest) {
 
 ## 消息队列和多任务处理
 
-- 创建一个消息队列
-- 创建多任务worker工作池
-- 将之前的发送消息，全部改成把消息发送给消息队列和worker工作池
+改造思路：
+
+- 创建多任务worker工作池，每个worker绑定一个消息channel接受connection reader解析后的数据封装成的request对象
+- 将之前的发送消息给客户端，全部改成把消息发送给消息队列和worker工作池。发送给worker的策略采用connId对工作池大小取余的方式选择。
+
+```go
+wnet/msgHandler.go
+/*
+	消息处理模块实现
+*/
+type MsgHandler struct {
+	//存放每个msgID对应的处理方法
+	apis map[uint32] iface.IRouter
+	//负责worker取任务的消息队列
+	TaskQueue []chan iface.IRequest
+	//业务工作worker池的woker数量
+	WorkerPoolSize uint32
+}
+
+
+iface/iMsgHandler.go
+/*
+	消息处理抽象层
+*/
+type IMsgHandler interface {
+	//调度、执行对应的router消息处理方法
+	DoMsgHandler(request IRequest)
+	//为消息添加具体的处理逻辑
+	AddRouter(msgID uint32,router IRouter)
+	//启动工作池
+	StartWorkerPool()
+	//处理发送给IMsgHandler的消息
+	SendMsgToTaskQ(IRequest)
+}
+
+
+```
+
+
+
+
 
 
 
 ## 连接管理
+
+连接管理的作用：
 
 - 对于连接数做限制，超过一定数量需要拒绝请求。
 - 连接创建后/连接销毁前提供Hook接口
 
 
 
+```go
+wnet/connMgr.go
+
+//连接管理对象
+type ConnManager struct {
+	//记录connId和连接对象的映射关系
+	cons map[uint32]iface.IConnection
+
+	lock sync.RWMutex
+}
+
+
+iface/iconnMgr.go
+/*
+	连接管理抽象模块
+*/
+type IConnManager interface {
+	//添加链接
+	Add(conn IConnection)
+	//删除链接
+	Remove(conn IConnection)
+	//根据connID获取链接
+	Get(connID uint32) (IConnection, error)
+	//得到当前连接数
+	Len() int
+	//清除所有链接
+	ClearConn()
+}
+
+
+```
+
+
+
+
+
 ## 连接属性配置
 
+对于框架使用者，需要为其提供连接属性的功能，将连接和一些业务信息作绑定，比如玩家ID等
+
+```go
+wnet/connection.go
+type Connection struct {
+  ...
+	//连接属性集合
+	Property map[string]interface{}
+	//连接属性锁
+	pLock sync.RWMutex
+}
+
+iface/iconnection.go
+//定义连接模块的抽象层
+type IConnection interface {
+	...
+	//设置连接属性
+	SetProperty(key string, value interface{})
+	//获取连接属性
+	GetProperty(key string) (interface{}, error)
+	//删除连接属性
+	RemoveProperty(key string)
+}
+
+```
+
+MMO服务中，当玩家登陆时，服务端接受到连接，给客户端发送一个随机分配的PlayerID
+
+```go
+mmo/main.go
+
+//当客户端建立连接的时候的hook函数
+func OnConnecionAdd(conn IConnection) {
+	//创建一个玩家
+	player := core.NewPlayer(conn)
+	...
+  //将pid和连接作绑定
+	conn.SetProperty("pid", player.Pid)
+	//fmt.Println(core.WorldMgrObj.GetPlayerByPid(player.Pid))
+	fmt.Println("=====> Player pidId = ", player.Pid, " arrived ====")
+}
+
+
+func main() {
+	//创建服务器句柄
+	s := NewServer("game")
+
+	//注册客户端连接建立和丢失函数
+	s.SetOnConnStart(OnConnecionAdd)
+	s.SetOnConnStop(OnConnecionClose)
+
+	//注册路由
+	s.AddRouter(3, &api.MoveApi{}) //移动
+
+	//启动服务
+	s.Serve()
+}
+
+```
 
 
 
-## 消息协议
+
+## MMO消息协议
 
 | MsgID | 事件                                                   | 信息                                                         |
 | ----- | ------------------------------------------------------ | ------------------------------------------------------------ |
@@ -251,6 +410,38 @@ func (*MoveApi) Handle(request IRequest) {
 | 3     | Move:<br />玩家移动坐标数据<br />发起者：client        | X:X 坐标<br />Y:Y 坐标<br />Z:Z坐标<br />V:角度              |
 | 200   | BroadCast<br />广播消息<br />发起者:server             | Pid:玩家<br />Topic:消息类型（1:世界聊天，2:坐标，3:动作）<br />Content:消息 |
 | 201   | SynPid<br />广播消息 掉线/消失视野<br />发起者：Server | Pid：玩家ID                                                  |
-| 202   | SynPos<br />将玩家信息同步给周围人                     | Player: 玩家信息（Pid：玩家ID，Position：位置信息）          |
-|       |
+| 202   | SynPos<br />将玩家信息同步给周围人<br />发起者：Server | Player: 玩家信息（Pid：玩家ID，Position：位置信息）          |
+|       |                                                        |                                                              |
+
+部分消息对应的protobuf结构定义
+
+```protobuf
+syntax="proto3";                //Proto协议
+package pb;                     //当前包名
+option csharp_namespace="Pb";   //给C#提供的选项
+
+//同步客户端玩家ID
+message SyncPid{
+  int32 Pid=1;
+}
+
+//玩家位置
+message Position{
+  float X=1;
+  float Y=2;
+  float Z=3;
+  float V=4;
+}
+
+//玩家广播数据
+message BroadCast{
+  int32 Pid=1;
+  int32 Tp=2;
+  oneof Data {
+    string Content=3;
+    Position P=4;
+    int32 ActionData=5;
+  }
+}
+```
 
